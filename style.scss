@@ -1,0 +1,672 @@
+@import 'cssreset';
+@import 'variables';
+@import 'mixins';
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: $webfont-primary;
+    background-image: url(img/group@3x.jpg);
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.site-btn {
+
+    &:active,
+    &:visited,
+    & {
+        display: inline-block;
+        color: inherit;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 50px;
+        border-width: 1px;
+        border-style: solid;
+        background-color: transparent;
+        padding: em(16) em(40);
+        transition: 0.3s;
+        font-weight: 600;
+        letter-spacing: em(2);
+    }
+
+    &.white {
+        color: $white-color;
+        border-color: $white-color;
+    }
+
+    &.black {
+        color: $seconday-color;
+        border-color: $seconday-color;
+    }
+
+    &:hover {
+        background-color: $primary-color;
+
+        &.white {
+            color: $seconday-color;
+        }
+    }
+}
+
+.site-title {
+    font-size: em(53);
+    font-weight: 400;
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+
+    padding: rem(40) rem(50);
+
+    .site-logo {
+        flex-basis: 15%;
+    }
+
+    .navbar {
+        flex-basis: 85%;
+
+        .navbar-item {
+
+            &:active,
+            &:visited,
+            & {
+                color: inherit;
+                text-decoration: none;
+                font-weight: 500;
+                letter-spacing: em(2);
+                padding: em(6) 0em;
+            }
+
+            &:not(.lenguaje-item) {
+                margin-right: em(60);
+            }
+
+            &.lenguaje-item {
+                float: right;
+                margin-left: em(20);
+            }
+
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                width: 0%;
+                background-color: #fff;
+                transition: .3s;
+            }
+
+            &:hover,
+            &:focus {
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .menu-hamburger {
+        display: none;
+        cursor: pointer;
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            background-color: $white-color;
+        }
+    }
+}
+
+main {
+    section {
+        article {
+            @include container();
+        }
+    }
+}
+
+.acercade {
+    color: $white-color;
+    padding: rem(200) 0rem rem(200) rem(100);
+
+    .site-title {
+        margin-bottom: rem(30);
+
+        span {
+            display: block;
+
+            strong {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+.historia {
+    background-color: $bg-color-historias;
+    padding: rem(100) 0rem;
+
+    article {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        flex-wrap: wrap;
+        column-gap: rem(40);
+
+        div {
+            &:nth-of-type(1) {
+                align-self: flex-start;
+            }
+
+            &:nth-of-type(3) {
+                align-self: flex-end;
+            }
+        }
+
+        h3 {
+            text-transform: uppercase;
+            color: $primary-color;
+            text-align: right;
+            line-height: rem(53);
+            font-size: em(26);
+        }
+
+        h2 {
+            margin-bottom: rem(40);
+            line-height: 1;
+
+            span {
+                display: block;
+            }
+        }
+
+        p {
+            color: $text-color;
+            font-size: em(26);
+
+            span {
+                display: block;
+            }
+        }
+    }
+
+}
+
+.raquetas {
+    display: flex;
+    flex-wrap: wrap;
+    .nuestras-raquetas {
+        width: 35%;
+        background-image: url(img/ball-color-court@3x.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: rem(80) 0rem;
+        display: flex;
+        align-items: center;
+        .slide-left {
+            width: 70%;
+            margin-left: auto;
+            margin-right: em(20);
+            padding-bottom: em(60);
+            .slide-item {
+                .site-title {
+                    color: #fff;
+
+                    span {
+                        display: block;
+                        font-weight: 700;
+                    }
+                }
+
+                p {
+                    color: #fff;
+                    font-size: em(20);
+                }
+            }
+        }
+
+        .slick-dots {
+            display: flex;
+            padding: 0;
+
+            li {
+                list-style: none;
+
+                button {
+                    text-align: center;
+                    border: none;
+                    background: transparent;
+                    border: none;
+                    color: transparent;
+                    position: relative;
+                    cursor: pointer;
+                    padding: em(20);
+
+                    &::before {
+                        content: '';
+                        display: inline-block;
+                        width: 10px;
+                        height: 10px;
+                        background-color: $white-color;
+                        border-radius: 50px;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                &.slick-active {
+                    button {
+                        &::before {
+                            background-color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .prev-arrow, .next-arrow {
+            position: absolute;
+            bottom: 0;
+            margin-top: -15px;
+            border: none;
+            background-color: transparent;
+            border: 2px solid $white-color;
+            border-radius: 50px;
+            height: em(60);
+            width: em(60);
+            line-height: em(60);
+            text-align: center;
+            transition: .3s;
+            &:hover{
+                border-color: $primary-color;
+                .prev-icon, .next-icon{
+                    border-left-color: $primary-color;
+                    border-right-color: $primary-color;
+                }
+            }
+        }
+
+        .prev-arrow{
+
+        }
+
+        .next-arrow{
+            left: em(100);
+        }
+
+        .prev-icon, .next-icon{
+            display: inline-block;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            margin-top: em(14);
+            transition: .3s;
+        }
+
+        .prev-icon {
+            border-left: 0 solid transparent;
+            border-right: em(15) solid $white-color;
+            margin-right: em(5);
+        }
+
+        .next-icon {
+            border-right: 0 solid transparent;
+            border-left: em(15) solid $white-color;
+            margin-left: em(5);
+
+        }
+    }
+
+    .galeria-raquetas {
+        width: 65%;
+        background-color: $bg-color-galleria;
+        padding: rem(80) 0rem rem(80) rem(80);
+
+        .gallery {
+            .gallery-item{
+                a {
+                    display: block;
+                    margin: rem(20);
+                    picture {
+                        border-radius: em(24);
+                        background-color: #f3f4f8;
+                        overflow: hidden;
+    
+                        img {
+                            border-radius: em(24);
+                            height: auto;
+                            transition: .3s;
+                        }
+                    }
+    
+                    position: relative;
+    
+                    &::before {
+                        content: attr(data-number);
+                        position: absolute;
+                        top: em(20);
+                        left: em(18);
+                        width: em(40);
+                        height: em(40);
+                        line-height: em(40);
+                        border-radius: 50px;
+                        background-color: $primary-color;
+                        text-align: center;
+                        font-size: rem(17);
+                        color: $white-color;
+                        z-index: 10;
+                        transition: .3s;
+                    }
+    
+                    &:hover {
+                        img {
+                            transform: scale(0.9);
+                        }
+    
+                        &::before {
+                            background-color: $seconday-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    padding: rem(50) 0rem;
+    background-color: $primary-color;
+
+    section {
+        @include container();
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        article {
+            &:nth-of-type(1) {
+                flex-basis: 35%;
+            }
+        }
+
+        .quick-links {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: rem(20);
+
+            a {
+
+                &:active,
+                &:visited,
+                & {
+                    text-decoration: none;
+                    color: $seconday-color;
+                    font-weight: 500;
+                    font-size: em(16);
+                    letter-spacing: em(2);
+                    position: relative;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    height: 2px;
+                    width: 0%;
+                    background-color: $seconday-color;
+                    transition: .3s;
+                }
+
+                &:hover,
+                &:focus {
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .social-media {
+            width: 50%;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+
+            a {
+                svg {
+                    width: em(40);
+                    height: em(40);
+
+                    g {
+                        circle {
+                            stroke: #fff;
+                            transition: .3s;
+                        }
+
+                        path {
+                            fill: #fff;
+                            transition: .3s;
+                        }
+                    }
+                }
+
+                &:hover {
+                    circle {
+                        stroke: $seconday-color;
+                    }
+
+                    path {
+                        fill: $seconday-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 1539px) {
+
+    footer {
+        section {
+            article {
+                &:nth-of-type(1) {
+                    flex-basis: 60%;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 1199px) {
+    html {
+        font-size: 14px;
+    }
+
+    .historia {
+        font-size: 10px;
+    }
+
+    footer {
+        padding: rem(50) rem(50);
+    }
+}
+
+@media(max-width: 991px) {
+    html {
+        font-size: 12px;
+    }
+
+    .raquetas{
+        .nuestras-raquetas, .galeria-raquetas{
+            width: 100%;
+        }
+
+        .galeria-raquetas{
+            padding-left: 0rem;
+        } 
+
+        .nuestras-raquetas{
+            .slide-left{
+                width: 80%;
+                margin-right: auto;
+            }
+        }
+    }
+}
+
+@media(max-width: 767px) {
+    html {
+        font-size: 12px;
+    }
+
+    body {
+        position: relative;
+    }
+
+    header {
+        background-color: $primary-color;
+        font-size: 18px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 20;
+
+        .navbar {
+            position: fixed;
+            z-index: 20;
+            gap: 0;
+            flex-direction: column;
+            background-color: $seconday-color;
+            width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+
+            .navbar-item {
+                margin: em(0) !important;
+                display: block;
+                transition: .3s;
+
+                &.lenguaje-item {
+                    float: none;
+                }
+
+                &::before {
+                    display: none;
+                }
+
+                &:hover {
+                    background-color: $primary-color;
+                }
+            }
+
+            &.top-to-bottom {
+                top: -100%;
+                left: 0;
+                right: 0;
+
+                &.active {
+                    top: em(84);
+                }
+            }
+        }
+
+        .menu-hamburger {
+            display: block;
+
+            &.active {
+                .bar {
+                    &:nth-child(1) {
+                        transform: translateY(8px) rotate(45deg);
+                    }
+
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+
+                    &:nth-child(3) {
+                        transform: translateY(-8px) rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        margin-top: rem(84);
+    }
+
+    .acercade {
+        padding: rem(200) 0rem;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .historia {
+        article {
+            grid-template-columns: 1fr;
+            column-gap: normal;
+
+            div {
+                text-align: center;
+
+                h3 {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    footer {
+        font-size: 16px;
+        text-align: center;
+
+        section {
+            justify-content: center;
+
+            article {
+                &:nth-of-type(1) {
+                    flex-basis: 100%;
+                }
+
+                .quick-links {
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    a {
+                        flex-basis: 100%;
+                    }
+                }
+
+                .social-media {
+                    display: inline-grid;
+                    width: 100%;
+
+                    a {
+                        svg {
+                            margin-inline: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

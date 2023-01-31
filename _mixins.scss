@@ -1,0 +1,73 @@
+@use 'sass:math';
+
+@function responsive-px($min-px, $max-px, $min-vw, $max-vw) {
+  @return calc(#{$min-px}px + (#{$max-px} - #{$min-px}) * ((100vw - #{$min-vw}px) / (#{$max-vw} - #{$min-vw})));
+}
+
+@function rem($pixel){
+  @if math.is-unitless($pixel) {
+      @return math.div($pixel, 16) + rem;
+  }
+  @else{
+      @error 'Don\'t use units when using the rem() function; only numbers.';
+  }
+}
+
+@function em($pixel){
+  @if math.is-unitless($pixel) {
+      @return math.div($pixel, 16) + em;
+  }
+  @else{
+      @error 'Don\'t use units when using the em() function; only numbers.';
+  }
+}
+
+
+$breakpoints-up: (
+    "small": em(768),
+    "medium": em(992),
+    "large": em(1200),
+    "xlarge": em(1530)
+);
+
+$breakpoints-down: (
+    "xsmall": em(767.98),
+    "small": em(991.98),
+    "medium": em(1199.98),
+    "large": em(1529.98)
+);
+
+
+@mixin breakpoint($size) {
+    @media (min-width: map-get($breakpoints-up, $size)){
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size) {
+    @media (max-width: map-get($breakpoints-down, $size)){
+        @content;
+    }
+}
+
+@mixin container {
+    width: 100%;
+    @media (min-width: 768px) {
+        width: 750px;
+        margin: 0 auto;
+        // padding-left: 15px;
+        // padding-right: 15px;
+    }
+
+    @media (min-width: 992px) {
+        width: 970px;
+    }
+
+    @media (min-width: 1200px) {
+        width: 1170px;
+    }
+
+    @media (min-width: 1530px) {
+        width: 1500px;
+    }
+}
