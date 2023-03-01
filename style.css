@@ -499,12 +499,12 @@ footer section .social-media a:hover path {
   fill: #2b3049;
 }
 
-@media (max-width: 1539px) {
+@media (max-width: 95.62375em) {
   footer section article:nth-of-type(1) {
     flex-basis: 60%;
   }
 }
-@media (max-width: 1199px) {
+@media (max-width: 74.99875em) {
   html {
     font-size: 14px;
   }
@@ -515,7 +515,7 @@ footer section .social-media a:hover path {
     padding: 3.125rem 3.125rem;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 61.99875em) {
   html {
     font-size: 12px;
   }
@@ -530,7 +530,7 @@ footer section .social-media a:hover path {
     margin-right: auto;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 47.99875em) {
   html {
     font-size: 12px;
   }

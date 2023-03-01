@@ -55,7 +55,6 @@ body {
 .site-title {
     font-size: em(53);
     font-weight: 400;
-
 }
 
 header {
@@ -481,8 +480,8 @@ footer {
     }
 }
 
-@media(max-width: 1539px) {
-
+//max-width: 1539px
+@include breakpoint-down(large){
     footer {
         section {
             article {
@@ -494,7 +493,8 @@ footer {
     }
 }
 
-@media(max-width: 1199px) {
+//max-width: 1199px
+@include breakpoint-down(medium){
     html {
         font-size: 14px;
     }
@@ -508,7 +508,8 @@ footer {
     }
 }
 
-@media(max-width: 991px) {
+//max-width: 991px
+@include breakpoint-down(small){
     html {
         font-size: 12px;
     }
@@ -531,7 +532,8 @@ footer {
     }
 }
 
-@media(max-width: 767px) {
+//max-width: 767px
+@include breakpoint-down(xsmall){
     html {
         font-size: 12px;
     }
