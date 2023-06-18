@@ -2,7 +2,7 @@
 Basic landing page using HTML, CSS, JQuery.
 
 ## Usage
-Clone this repositorie and open the project in VS Code and install Live Server and Live Sass Compiler extensions.
+Clone this repository and open the project in VS Code and install Live Server and Live Sass Compiler extensions.
 
 ## Featured
 
