@@ -182,9 +182,9 @@ header .menu-hamburger {
 }
 header .menu-hamburger .bar {
   display: block;
-  width: 25px;
+  width: 1.5625em;
   height: 3px;
-  margin: 5px 0;
+  margin: 0.3125em 0;
   transition: all 0.3s ease;
   background-color: #fff;
 }
@@ -192,25 +192,25 @@ header .menu-hamburger .bar {
 main section article {
   width: 100%;
 }
-@media (min-width: 768px) {
+@media (min-width: 48em) {
   main section article {
-    width: 750px;
+    width: 46.875em;
     margin: 0 auto;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 62em) {
   main section article {
-    width: 970px;
+    width: 60.625em;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   main section article {
-    width: 1170px;
+    width: 73.125em;
   }
 }
-@media (min-width: 1530px) {
+@media (min-width: 95.625em) {
   main section article {
-    width: 1500px;
+    width: 93.75em;
   }
 }
 
@@ -318,8 +318,8 @@ main section article {
 .raquetas .nuestras-raquetas .slick-dots li button::before {
   content: "";
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  width: 0.625em;
+  height: 0.625em;
   background-color: #fff;
   border-radius: 50px;
   position: absolute;
@@ -333,7 +333,7 @@ main section article {
 .raquetas .nuestras-raquetas .prev-arrow, .raquetas .nuestras-raquetas .next-arrow {
   position: absolute;
   bottom: 0;
-  margin-top: -15px;
+  margin-top: -0.9375em;
   border: none;
   background-color: transparent;
   border: 2px solid #fff;
@@ -356,8 +356,8 @@ main section article {
 }
 .raquetas .nuestras-raquetas .prev-icon, .raquetas .nuestras-raquetas .next-icon {
   display: inline-block;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+  border-top: 0.625em solid transparent;
+  border-bottom: 0.625em solid transparent;
   margin-top: 0.875em;
   transition: 0.3s;
 }
@@ -424,25 +424,25 @@ footer section {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-@media (min-width: 768px) {
+@media (min-width: 48em) {
   footer section {
-    width: 750px;
+    width: 46.875em;
     margin: 0 auto;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 62em) {
   footer section {
-    width: 970px;
+    width: 60.625em;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   footer section {
-    width: 1170px;
+    width: 73.125em;
   }
 }
-@media (min-width: 1530px) {
+@media (min-width: 95.625em) {
   footer section {
-    width: 1500px;
+    width: 93.75em;
   }
 }
 footer section article:nth-of-type(1) {

@@ -52,20 +52,20 @@ $breakpoints-down: (
 
 @mixin container {
     width: 100%;
-    @media (min-width: 768px) {
-        width: 750px;
+    @media (min-width: em(768)) {
+        width: em(750);
         margin: 0 auto;
     }
 
-    @media (min-width: 992px) {
-        width: 970px;
+    @media (min-width: em(992)) {
+        width: em(970);
     }
 
-    @media (min-width: 1200px) {
-        width: 1170px;
+    @media (min-width: em(1200)) {
+        width: em(1170);
     }
 
-    @media (min-width: 1530px) {
-        width: 1500px;
+    @media (min-width: em(1530)) {
+        width: em(1500);
     }
 }

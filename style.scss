@@ -15,7 +15,6 @@ body {
 }
 
 .site-btn {
-
     &:active,
     &:visited,
     & {
@@ -122,9 +121,9 @@ header {
 
         .bar {
             display: block;
-            width: 25px;
+            width: em(25);
             height: 3px;
-            margin: 5px 0;
+            margin: em(5) 0;
             transition: all 0.3s ease;
             background-color: $white-color;
         }
@@ -259,8 +258,8 @@ main {
                     &::before {
                         content: '';
                         display: inline-block;
-                        width: 10px;
-                        height: 10px;
+                        width: em(10);
+                        height: em(10);
                         background-color: $white-color;
                         border-radius: 50px;
                         position: absolute;
@@ -283,7 +282,7 @@ main {
         .prev-arrow, .next-arrow {
             position: absolute;
             bottom: 0;
-            margin-top: -15px;
+            margin-top: em(-15);
             border: none;
             background-color: transparent;
             border: 2px solid $white-color;
@@ -312,8 +311,8 @@ main {
 
         .prev-icon, .next-icon{
             display: inline-block;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
+            border-top: em(10) solid transparent;
+            border-bottom: em(10) solid transparent;
             margin-top: em(14);
             transition: .3s;
         }
